@@ -8,15 +8,15 @@ require File.dirname(__FILE__) << "/lib/authlogic_rpx/version"
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "authlogic_rpx"
+    gem.name = "slayer-authlogic_rpx"
     gem.version = AuthlogicRpx::Version::STRING
     gem.summary = %Q{Authlogic plug-in for RPX support}
     gem.description = %Q{Authlogic extension/plugin that provides RPX (rpxnow.com) authentication support}
     gem.email = "gallagher.paul@gmail.com"
     gem.homepage = "http://github.com/tardate/authlogic_rpx"
-    gem.authors = [ "Paul Gallagher / tardate <gallagher.paul@gmail.com>" ]
-    gem.add_dependency "authlogic", "= 2.1.6"
-    gem.add_dependency "rpx_now", "= 0.6.23"
+    gem.authors = [ "Paul Gallagher / tardate <gallagher.paul@gmail.com>", "Vladislav Moskovets <github@vlad.org.ua>" ]
+    gem.add_dependency "authlogic", ">= 2.1.6"
+    gem.add_dependency "rpx_now", ">= 0.6.23"
     gem.add_development_dependency "test-unit", ">= 2.1.1"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
