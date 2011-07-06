@@ -155,8 +155,10 @@ module AuthlogicRpx
 					errors.add_to_base("Authentication failed. Please try again.")
 					return false
 				end
-				
+
 				self.attempted_record = klass.send(find_by_rpx_identifier_method, rpx_id)
+
+        return false unless rpx_data_valid?
 				
 				# so what do we do if we can't find an existing user matching the RPX authentication...
 				if !attempted_record
@@ -218,6 +220,16 @@ module AuthlogicRpx
 			def map_rpx_data_each_login
 
 			end
+
+			# rpx_data_valid? provides a hook to allow you to validate RPX profile information every time the user
+			# logs in.
+			# By default, no validation is performed
+      #
+      # For instance you can check if user with @rpx_data['profile']['email'] is found in database
+			#
+      def rpx_data_valid?
+        true
+      end
 	
 		end
 		
