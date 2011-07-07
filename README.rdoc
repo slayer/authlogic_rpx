@@ -1,5 +1,10 @@
 = Authlogic_RPX
 
+== Slayer's Changes
+* update required authlogic version to 3.0.3
+* added rpx_data_valid? hook
+* store rpx_data in RPXIdentifier model
+
 == Purpose
 
 Authlogic_RPX is an Authlogic extension library that provides support for authentication using the Janrain Engage (formerly RPX) multi-authentication service offered by JanRain. To use RPX, you must first register your application at {Janrain Engage}[http://rpxnow.com/]. A free "Basic" account is available, in addition to paid enhanced versions. All work with Authlogic_RPX.

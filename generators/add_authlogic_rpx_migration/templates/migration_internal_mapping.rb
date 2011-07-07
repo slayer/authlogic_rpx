@@ -3,6 +3,7 @@ class AddAuthlogicRpxMigration < ActiveRecord::Migration
     create_table :rpx_identifiers do |t|
       t.string  :identifier, :null => false
       t.string  :provider_name
+      t.text    :rpx_data
       t.integer :<%= user_model_base %>_id, :null => false
       t.timestamps
     end

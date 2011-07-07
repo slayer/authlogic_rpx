@@ -179,7 +179,7 @@ module AuthlogicRpx
 				      after_merge_rpx_data( another_user, self )
 				      
 					  else
-					    self.add_rpx_identifier( rpx_id, rpx_provider_name )
+					    self.add_rpx_identifier( rpx_id, rpx_provider_name, added_rpx_data)
 					  end
 				  end
 				  
@@ -233,7 +233,7 @@ module AuthlogicRpx
     # adds RPX identification to the instance.
     # Abstracts how the RPX identifier is added to allow for multiplicity of underlying implementations
 		# 
-    def add_rpx_identifier( rpx_id, rpx_provider_name )
+    def add_rpx_identifier( rpx_id, rpx_provider_name, rpx_data = {})
 		  self.rpx_identifier = rpx_id
 		  #TODO: make rpx_provider_name a std param?
     end
@@ -274,8 +274,8 @@ module AuthlogicRpx
     # adds RPX identification to the instance.
     # Abstracts how the RPX identifier is added to allow for multiplicity of underlying implementations
 		# 
-    def add_rpx_identifier( rpx_id, rpx_provider_name )
-		  self.rpx_identifiers.build(:identifier => rpx_id, :provider_name => rpx_provider_name )
+    def add_rpx_identifier( rpx_id, rpx_provider_name, rpx_data = {} )
+		  self.rpx_identifiers.build(:identifier => rpx_id, :provider_name => rpx_provider_name, :rpx_data => rpx_data )
     end
 
     # Checks if given identifier is an identity for this account

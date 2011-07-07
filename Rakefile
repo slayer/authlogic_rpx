@@ -15,7 +15,7 @@ begin
     gem.email = "gallagher.paul@gmail.com"
     gem.homepage = "http://github.com/tardate/authlogic_rpx"
     gem.authors = [ "Paul Gallagher / tardate <gallagher.paul@gmail.com>", "Vladislav Moskovets <github@vlad.org.ua>" ]
-    gem.add_dependency "authlogic", ">= 2.1.6"
+    gem.add_dependency "authlogic", ">= 3.0.3"
     gem.add_dependency "rpx_now", ">= 0.6.23"
     gem.add_development_dependency "test-unit", ">= 2.1.1"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
