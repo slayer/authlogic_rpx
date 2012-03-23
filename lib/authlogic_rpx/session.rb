@@ -177,6 +177,7 @@ module AuthlogicRpx
 						return false
 					end
 				else
+					self.attempted_record.update_rpx_identifier( rpx_id, rpx_provider_name, @rpx_data)
 					map_rpx_data_each_login
 				end
 			
