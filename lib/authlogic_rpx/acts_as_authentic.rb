@@ -282,7 +282,9 @@ module AuthlogicRpx
     # Abstracts how the RPX identifier is updated to allow for multiplicity of underlying implementations
     #
     def update_rpx_identifier( rpx_id, rpx_provider_name, rpx_data = {} )
-      self.rpx_identifiers.where(:identifier => rpx_id, :provider_name => rpx_provider_name).update_all(:rpx_data => rpx_data )
+      if rpx = self.rpx_identifiers.where(:identifier => rpx_id, :provider_name => rpx_provider_name).first
+        rpx.update_attribute(:rpx_data, rpx_data )
+      end
     end
 
     # Checks if given identifier is an identity for this account
