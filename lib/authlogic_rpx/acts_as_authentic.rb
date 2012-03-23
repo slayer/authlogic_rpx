@@ -283,7 +283,7 @@ module AuthlogicRpx
     #
     def update_rpx_identifier( rpx_id, rpx_provider_name, rpx_data = {} )
       if rpx = self.rpx_identifiers.where(:identifier => rpx_id, :provider_name => rpx_provider_name).first
-        rpx.update_attribute(:rpx_data, rpx_data )
+        rpx.update_attributes(:rpx_data => rpx_data, :updated_at => Time.now )
       end
     end
 
